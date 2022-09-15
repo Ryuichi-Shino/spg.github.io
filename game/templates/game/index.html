@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+    <title>sampleゲーム</title>
+</head>
+
+<body>
+    <form action="{% url 'move_to_gamepage' %}" method="post">
+        {% csrf_token %}
+        <input type="image" src="{% static 'image/start_button.png' %}" name="start_button">
+    </form>
+
+    <form action="{% url 'move_to_gamepage2' %}" method="post">
+        {% csrf_token %}
+        <input type="image" src="{% static 'image/start_button2.png' %}" name="start_button2">
+    </form>
+
+    <form action="{% url 'move_to_gamepage3' %}" method="post">
+        {% csrf_token %}
+        <input type="image" src="{% static 'image/start_button3.png' %}" name="start_button3">
+    </form>
+</body>
+</html>
