@@ -3,14 +3,14 @@
 <html lang="ja">
 <head>
     <meta name="viewport"
-    content="width=320,
+      content="width=320,
       height=480,
       initial-scale=1.0,
       minimum-scale=1.0,
       maximum-scale=2.0,
       user-scalable=yes" />
     <meta charset="utf-8" />
-    <title>スマートフォンの使い方を学べるゲーム</title>
+    <title>スマホゲーム</title>
 </head>
 
 <body>
@@ -34,5 +34,9 @@
         {% csrf_token %}
         <input type="image" src="{% static 'image/start_button3.png' %}" name="start_button3">
     </form>
+    <h4>文字サイズ変更</h4>
+    <button type="button">+</button>
+    <button type="button">-</button>
+    
 </body>
 </html>
