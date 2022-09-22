@@ -14,16 +14,21 @@
 </head>
 
 <body>
+    <h1>スマートフォンクイズ</h1>
     <form action="{% url 'move_to_gamepage' %}" method="post">
         {% csrf_token %}
         <input type="image" src="{% static 'image/start_button.png' %}" name="start_button">
     </form>
+    <hr>
 
+    <h1>フリック入力に挑戦</h1>
     <form action="{% url 'move_to_gamepage2' %}" method="post">
         {% csrf_token %}
         <input type="image" src="{% static 'image/start_button2.png' %}" name="start_button2">
     </form>
 
+    <hr>
+    <h1>アプリをインストールしてみよう</h1>
     <form action="{% url 'move_to_gamepage3' %}" method="post">
         {% csrf_token %}
         <input type="image" src="{% static 'image/start_button3.png' %}" name="start_button3">
