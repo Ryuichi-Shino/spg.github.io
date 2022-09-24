@@ -14,12 +14,13 @@
 </head>
 
 <body>
+    <font size="3">
     <h1>スマホの使い方ゲーム</h1>
     <form action="{% url 'move_to_gamepage' %}" method="post" id="quiz">
         {% csrf_token %}
         <button type="submit" form="quiz">スマホクイズ</button>
     </form>
-    <hr>
+
 
     <h2>フリック入力に挑戦</h2>
     <form action="{% url 'move_to_gamepage2' %}" method="post">
@@ -27,7 +28,6 @@
         <input type="image" src="{% static 'image/start_button2.png' %}" name="start_button2">
     </form>
 
-    <hr>
     <h2>アプリをインストールしてみよう</h2>
     <form action="{% url 'move_to_gamepage3' %}" method="post">
         {% csrf_token %}
@@ -36,6 +36,6 @@
     <h4>文字サイズ変更</h4>
     <button type="button">+</button>
     <button type="button">-</button>
-    
+    </font>
 </body>
 </html>
