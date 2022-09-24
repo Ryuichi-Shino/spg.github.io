@@ -21,13 +21,16 @@
         </div>
     </form>
 
-    <hr>
-
     <div style="text-align:center">
+
+        <h1>目指せスマホマスター！！</h1>
+
+        <hr>
+
         <h2>スマホクイズに挑戦</h2>
         <form action="{% url 'move_to_gamepage' %}" method="post" id="quiz">
             {% csrf_token %}
-            <button type="submit" form="quiz">スマホクイズ</button>
+            <input type="image" src="{% static 'image/start_button2.png' %}" name="start_button2">
         </form>
 
         <hr>
