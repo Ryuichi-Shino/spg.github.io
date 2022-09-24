@@ -13,3 +13,6 @@ def move_to_gamepage2(request):
 def move_to_gamepage3(request):
     return render(request, 'game/gamepage3.html')
 
+def move_to_oputionpage(request):
+    return render(request, 'game/opution.html')
+
