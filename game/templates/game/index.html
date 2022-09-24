@@ -21,8 +21,10 @@
         </div>
     </form>
 
-    <div style="text-align:center">
+    <hr>
 
+    <div style="text-align:center">
+        <h2>スマホクイズに挑戦</h2>
         <form action="{% url 'move_to_gamepage' %}" method="post" id="quiz">
             {% csrf_token %}
             <button type="submit" form="quiz">スマホクイズ</button>
