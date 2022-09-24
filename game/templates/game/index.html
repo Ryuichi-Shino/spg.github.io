@@ -23,8 +23,9 @@
 
     <h2>スマホの使い方ゲーム</h2>
     <form action="{% url 'move_to_gamepage' %}" method="post">
+    <form action="{% url 'move_to_gamepage' %}" method="post" id="quiz">
         {% csrf_token %}
-        <input type="image" src="{% static 'image/start_button.png' %}" name="start_button">
+        <button type="submit" form="quiz">スマホクイズ</button>
     </form>
     <hr>
 
