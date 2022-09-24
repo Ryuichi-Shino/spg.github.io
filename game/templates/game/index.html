@@ -15,6 +15,12 @@
 
 <body>
     <h1>スマホの使い方ゲーム</h1>
+
+    <form action="{% url 'move_to_oputionpage' %}" method="post">
+        {% csrf_token %}
+        <input type="image" src="{% static 'image/opution.png' %}" name="opution_button">
+    </form>
+
     <h2>スマホの使い方ゲーム</h2>
     <form action="{% url 'move_to_gamepage' %}" method="post">
         {% csrf_token %}
@@ -37,6 +43,7 @@
     <h4>文字サイズ変更</h4>
     <button type="button">+</button>
     <button type="button">-</button>
+    
     
 </body>
 </html>
