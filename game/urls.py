@@ -10,3 +10,6 @@ urlpatterns = [
     path('bigindex/',views.move_to_bigindex, name='move_to_bigindex'),
     path('option/',views.move_to_optionpage, name='move_to_optionpage'),
 ]
+
+import sys
+sys.dont_write_bytecode = True

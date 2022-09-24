@@ -129,3 +129,6 @@ STATICFILES_DIRS = (
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 ALLOWED_HOSTS = ["192.168.0.15", "192.168.0.7", "192.168.0.8", "localhost"] # ローカルIPアドレスを追加
+
+import sys
+sys.dont_write_bytecode = True

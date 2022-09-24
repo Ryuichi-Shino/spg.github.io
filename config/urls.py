@@ -22,3 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('game.urls')),
 ]
+
+import sys
+sys.dont_write_bytecode = True

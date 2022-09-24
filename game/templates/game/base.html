@@ -9,7 +9,17 @@
  
 <body>
     {% block content %}
-    <p>親</p>
+        {% for question in question_list %}
+            <h2>問題文</h2>
+            <li>選択肢1</li>
+            <li>選択肢2</li>
+            <li>選択肢3</li>
+            <li>選択肢4</li>
+        {% endfor %}
+
+    <p>問題番号:{{ question_number }}</p>
+    <a href="{% url 'NextQuestion' %}"><button>次の問題へ</button></a> 
+
     {% endblock %}
 </body>
  

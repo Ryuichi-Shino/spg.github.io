@@ -6,6 +6,12 @@ import sqlite3
 def index(request):
 	return render(request, 'game/index.html')
 
+def move_to_smallindex(request):
+    return render(request, 'game/smallindex.html')
+
+def move_to_bigindex(request):
+    return render(request, 'game/bigindex.html')
+
 def move_to_gamepage(request):
     return render(request, 'game/gamepage.html')
 
@@ -15,8 +21,8 @@ def move_to_gamepage2(request):
 def move_to_gamepage3(request):
     return render(request, 'game/gamepage3.html')
 
-def move_to_oputionpage(request):
-    return render(request, 'game/opution.html')
+def move_to_optionpage(request):
+    return render(request, 'game/option.html')
 
 
 
@@ -36,6 +42,7 @@ def move_to_oputionpage(request):
     #}
     #return render(request,template_name,context)
 
-
+import sys
+sys.dont_write_bytecode = True
 
 
