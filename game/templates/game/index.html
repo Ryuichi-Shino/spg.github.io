@@ -22,11 +22,11 @@
     </form>
 
     <h2>スマホの使い方ゲーム</h2>
-    <form action="{% url 'move_to_gamepage' %}" method="post">
     <form action="{% url 'move_to_gamepage' %}" method="post" id="quiz">
         {% csrf_token %}
         <button type="submit" form="quiz">スマホクイズ</button>
     </form>
+
     <hr>
 
     <h2>フリック入力に挑戦</h2>
@@ -36,6 +36,7 @@
     </form>
 
     <hr>
+
     <h2>アプリをインストールしてみよう</h2>
     <form action="{% url 'move_to_gamepage3' %}" method="post">
         {% csrf_token %}
