@@ -15,7 +15,6 @@
 
 <body>
     <font size="6">
-    <h1>スマホの使い方ゲーム</h1>
     <form action="{% url 'move_to_optionpage' %}" method="post" id="option">
         <div style="text-align:right">
             {% csrf_token %}
@@ -29,28 +28,30 @@
     <button disabled>大</button>
         
     <div style="text-align:center">
-        <h2>スマホクイズ</h2>
+        <h1>目指せスマホマスター！！</h1>
+        <hr>
+
+        <h2>スマホクイズに挑戦</h2>
         <form action="{% url 'move_to_gamepage' %}" method="post" id="quiz">
             {% csrf_token %}
-            <input type="image" src="{% static 'image/start_button.png' %}" name="start_button1">
+            <input type="image" src="{% static 'image/start_button.png' %}" name="start_button">
         </form>
-
         <hr>
 
         <h2>フリック入力に挑戦</h2>
         <form action="{% url 'move_to_gamepage2' %}" method="post">
             {% csrf_token %}
-            <input type="image" src="{% static 'image/start_button.png' %}" name="start_button2">
+            <input type="image" src="{% static 'image/start_button.png' %}" name="start_button">
         </form>
-
         <hr>
 
         <h2>アプリをインストールしてみよう</h2>
         <form action="{% url 'move_to_gamepage3' %}" method="post">
             {% csrf_token %}
-            <input type="image" src="{% static 'image/start_button.png' %}" name="start_button3">
+            <input type="image" src="{% static 'image/start_button.png' %}" name="start_button">
         </form>
 
+        
     </div>
     </font>
 </body>
