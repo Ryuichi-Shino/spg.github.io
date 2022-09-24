@@ -14,6 +14,11 @@
 </head>
 
 <body>
+<<<<<<< HEAD
+=======
+    <font size="3">
+    <h1>スマホの使い方ゲーム</h1>
+>>>>>>> a1b5c6dc5f7cb430b30b639f81d002d2ba77bc7d
     <form action="{% url 'move_to_oputionpage' %}" method="post">
         <div style="text-align:right">
             {% csrf_token %}
@@ -24,6 +29,7 @@
     <div style="text-align:center">
         <h1>スマホの使い方ゲーム</h1>
 
+<<<<<<< HEAD
         <h2>スマホの使い方ゲーム</h2>
         <form action="{% url 'move_to_gamepage' %}" method="post" id="quiz">
             {% csrf_token %}
@@ -51,5 +57,23 @@
     </div>
     
     
+=======
+    <h2>フリック入力に挑戦</h2>
+    <form action="{% url 'move_to_gamepage2' %}" method="post">
+        {% csrf_token %}
+        <input type="image" src="{% static 'image/start_button2.png' %}" name="start_button2">
+    </form>
+
+    <h2>アプリをインストールしてみよう</h2>
+    <form action="{% url 'move_to_gamepage3' %}" method="post">
+        {% csrf_token %}
+        <input type="image" src="{% static 'image/start_button3.png' %}" name="start_button3">
+    </form>
+    
+    <h4>文字サイズ変更</h4>
+    <button type="button">+</button>
+    <button type="button">-</button>
+    </font>
+>>>>>>> a1b5c6dc5f7cb430b30b639f81d002d2ba77bc7d
 </body>
 </html>
