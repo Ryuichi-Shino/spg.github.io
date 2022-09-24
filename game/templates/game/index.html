@@ -14,6 +14,7 @@
 </head>
 
 <body>
+    <h1>スマホの使い方ゲーム</h1>
     <form action="{% url 'move_to_oputionpage' %}" method="post">
         <div style="text-align:right">
             {% csrf_token %}
@@ -23,7 +24,6 @@
 
     <div style="text-align:center">
         <h1>スマホの使い方ゲーム</h1>
-
         <h2>スマホの使い方ゲーム</h2>
         <form action="{% url 'move_to_gamepage' %}" method="post" id="quiz">
             {% csrf_token %}
@@ -49,6 +49,5 @@
         <button type="button">+</button>
         <button type="button">-</button>
     </div>
-    
 </body>
 </html>
