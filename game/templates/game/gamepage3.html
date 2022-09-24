@@ -1,15 +1,12 @@
-{% extends 'game/base.html' %}
- 
-{% block title %}クイズゲーム{% endblock %}
- 
-{% block content %}
-    {% for question in question_list %}
-        <h2>{{ question.question_text }}</h2>
-        <li>{{ question.choices_1 }}</li>
-        <li>{{ question.choices_2 }}</li>
-        <li>{{ question.choices_3 }}</li>
-        <li>{{ question.choices_4 }}</li>
-     {% endfor %}
-        <p>問題番号</p>
-        <a href="{% url 'NextQuestion' %}"><button>次の問題へ</button></a> 
-{% endblock %}
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8" />
+    <title>ゲーム目次</title>
+</head>
+
+<body>
+    <h1>アプリインストール</h1>
+</body>
+</html>

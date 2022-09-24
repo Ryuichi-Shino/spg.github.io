@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="ja">
 
 <head>
@@ -7,6 +8,14 @@
 </head>
 
 <body>
-    <h1>フリック入力ゲーム</h1>
+    <div style="text-align:center">
+        <h1>クイズゲーム</h1>
+
+        <form action="{% url 'move_to_quiz1' %}" method="post" id="quiz">
+            {% csrf_token %}
+            <input type="image" src="{% static 'image/start_button.png' %}" name="start_button">
+        </form>
+    </div>
+
 </body>
 </html>

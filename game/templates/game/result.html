@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ja">
+
+<body>
+    <div style="text-align:center">
+        <h1>結果</h1>
+        <form action="{% url 'index' %}" method="post">
+            {% csrf_token %}
+            <input type="image" src="{% static 'image/back.png' %}" name="start_button">
+        </form>
+    </div>
+</body>
+
+</html>

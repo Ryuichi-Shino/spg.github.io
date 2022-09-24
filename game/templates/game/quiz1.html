@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ja">
+
+<body>
+
+<form method="post" action="quiz2">
+
+    <div style="text-align:center">
+        <p>問題１<br>
+        <input type="radio" name="q1" value="1"> 1
+        <input type="radio" name="q2" value="2"> 2
+        <input type="radio" name="q3" value="3"> 3
+        </p>
+
+        <form action="{% url 'move_to_quiz2' %}" method="post">
+            {% csrf_token %}
+            <input type="image" src="{% static 'image/next1.png' %}" name="start_button">
+        </form>
+    </div>
+
+</form>
+
+</body>
+
+</html>
