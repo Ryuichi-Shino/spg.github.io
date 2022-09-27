@@ -31,6 +31,9 @@
         <h1>目指せスマホマスター！！</h1>
         <hr>
 
+        {% csrf_token %}
+            <image src="{% static 'image/top.png' %}">
+
         <h2>スマホクイズに挑戦</h2>
         <form action="{% url 'move_to_gamepage' %}" method="post" id="quiz">
             {% csrf_token %}
