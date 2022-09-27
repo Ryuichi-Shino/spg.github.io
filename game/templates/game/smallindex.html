@@ -2,6 +2,7 @@
 {% load static %}
 <html lang="ja">
 <head>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <meta name="viewport"
       content="width=320,
       height=480,
@@ -28,27 +29,27 @@
     <button onclick="location.href='/bigindex'">大</button>
         
     <div style="text-align:center">
-        <h1>目指せスマホマスター！！</h1>
+        <h1 class="sample">めざせスマホマスター!!</h1>
         <hr>
 
         {% csrf_token %}
             <image src="{% static 'image/top.png' %}">
 
-        <h2>スマホクイズに挑戦</h2>
+        <h2 class="sample2">スマホクイズに挑戦</h2>
         <form action="{% url 'move_to_gamepage' %}" method="post" id="quiz">
             {% csrf_token %}
             <input type="image" src="{% static 'image/start_button.png' %}" name="start_button">
         </form>
         <hr>
 
-        <h2>フリック入力に挑戦</h2>
+        <h2 class="sample2">フリック入力に挑戦</h2>
         <form action="{% url 'move_to_gamepage2' %}" method="post">
             {% csrf_token %}
             <input type="image" src="{% static 'image/start_button.png' %}" name="start_button">
         </form>
         <hr>
 
-        <h2>アプリをインストールしてみよう</h2>
+        <h2 class="sample2">カメラを使ってみよう</h2>
         <form action="{% url 'move_to_gamepage3' %}" method="post">
             {% csrf_token %}
             <input type="image" src="{% static 'image/start_button.png' %}" name="start_button">
