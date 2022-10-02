@@ -15,8 +15,12 @@
 
         <form action="{% url 'move_to_result' %}" method="post">
             {% csrf_token %}
+            <div class="btn" onclick="audio()">
             <input type="image" src="{% static 'image/next1.png' %}" name="start_button">
+            </div>
         </form>
+</audio> 
+
     </div>
 
 </form>

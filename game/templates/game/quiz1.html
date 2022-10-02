@@ -1,27 +1,24 @@
 <!DOCTYPE html>
-{% load static %}
 <html lang="ja">
-
+{% load static %}
 <head>
-    <script src = "{% static 'js/style.js' %}"></script>
+    <link rel="stylesheet" href="../../static/css/style.css"/>
+    <script type="text/javascript" src="../../static/js/style.js"></script>
     <title>quiz1</title>
 </head>
 
-
 <body>
-<font size="8">
-<form method="post" action="quiz2">
-
     <div style="text-align:center">
-
-        <p>問題１</p>
-
-        <h2>スマートフォンの文字サイズは…</h2>
-
-        <div>
-        <label><input type="radio" name="quiz" value="1">1. 変更できる</label>
-        <label><input type="radio" name="quiz" value="0">2. 変更出来ない</label>
-        <label><input type="radio" name="quiz" value="0">3. 一部のスマートフォンは変更できるものがある</label>
+        <h2>問題１</h2>
+        <p>スマートフォンの文字サイズは…</p>
+        <form id="quiz-1">
+            <input type="radio" name="answer" value="a">1. 変更できる</input>
+            <input type="radio" name="answer" value="b">2. 変更出来ない</input>
+            <input type="radio" name="answer" value="c">3. 一部のスマートフォンは変更できるものがある</input>
+        </form>
+        <button class="btn" type="button" onclick="answerQuiz1()">回答</button>
+        <div id="score-container">
+            <p id="score-message"></p>
         </div>
 
         <div>
@@ -41,16 +38,14 @@
 
         </script>
 
+        <button class="btn-score" type="button" onclick="showScore()">合計得点を見る</button>
+
+
 
         <form action="{% url 'move_to_quiz2' %}" method="post">
             {% csrf_token %}
             <input type="image" src="{% static 'image/next1.png' %}" name="next_button">
         </form>
-
     </div>
-
-</form>
-</font>
 </body>
-
 </html>
