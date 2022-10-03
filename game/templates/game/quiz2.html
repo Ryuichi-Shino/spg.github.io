@@ -12,6 +12,8 @@
         <input type="radio" name="q2" value="0"> 2
         <input type="radio" name="q3" value="0"> 3
         </p>
+        <p>{{ score.score }}</p>
+
 
         <form action="{% url 'move_to_quiz3' %}" method="post">
             {% csrf_token %}

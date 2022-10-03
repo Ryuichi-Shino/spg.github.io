@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+import sys
+sys.dont_write_bytecode = True
+from game.models import Score
 
 def index(request):
 	return render(request, 'game/index.html')
@@ -22,15 +25,6 @@ def move_to_gamepage3(request):
 def move_to_optionpage(request):
     return render(request, 'game/option.html')
 
-import sys
-sys.dont_write_bytecode = True
-
-def move_to_quiz1(request):
-    return render(request, 'game/quiz1.html')
-
-def move_to_quiz2(request):
-    return render(request, 'game/quiz2.html')
-
 def move_to_quiz3(request):
     return render(request, 'game/quiz3.html')
 
@@ -41,7 +35,28 @@ def move_to_quiz5(request):
     return render(request, 'game/quiz5.html')
 
 def move_to_result(request):
-    return render(request, 'game/result.html')
+    return render(request, 'game/quiz_result.html')
 
+def move_to_quiz1(request):
+    try:
+        score = Score.objects.get(pk=1)
+    except Score.DoesNotExist:
+        score = Score(score=0)
+        score.save()
+    score.reset()
+    context = { 'score':score }
+    return render(request, "game/quiz1.html", context)
 
+def move_to_quiz2(request):
+    try:
+        score = Score.objects.get(pk=1)
+    except Score.DoesNotExist:
+        score = Score(score=0)
+        score.save()
 
+    if request.method=='POST':
+        ans = request.POST['answer']
+        if (ans == 'a'):
+            score.increment()
+    context = { 'score':score }
+    return render(request, "game/quiz2.html", context)
