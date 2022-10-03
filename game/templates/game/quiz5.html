@@ -2,6 +2,11 @@
 {% load static %}
 <html lang="ja">
 
+<head>
+    <script src = "{% static 'js/style.js' %}"></script>
+    <title>quiz1</title>
+</head>
+
 <body>
 
 <form method="post" action="result">
@@ -14,13 +19,11 @@
         </p>
 
         <form action="{% url 'move_to_result' %}" method="post">
-            {% csrf_token %}
-            <div class="btn" onclick="audio()">
-            <input type="image" src="{% static 'image/next1.png' %}" name="start_button">
-            </div>
-        </form>
-</audio> 
+        
 
+                {% csrf_token %}
+                <input type="image" src="{% static 'image/next1.png' %}" name="start_button">
+        </form>
     </div>
 
 </form>

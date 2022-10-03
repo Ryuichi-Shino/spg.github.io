@@ -22,3 +22,7 @@ h1{
       0.08em 0.05em 0 rgba(0, 0, 0, 0.6);
   }
 
+  .sample2 img {
+    width: 100%;
+    transition-duration: 0.5s;
+  }
