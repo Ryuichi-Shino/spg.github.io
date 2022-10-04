@@ -13,9 +13,11 @@
         <h2>問題１</h2>
         <p>スマートフォンの文字サイズは…</p>
         <form action="{% url 'move_to_quiz2' %}" method="post">
-            <input type="radio" name="answer" value="correct">1. 変更できる</input>
-            <input type="radio" name="answer" value="incorrect">2. 変更出来ない</input>
-            <input type="radio" name="answer" value="incorrect">3. 一部のスマートフォンは変更できるものがある</input>
+            <div>
+                <input type="radio" name="answer" value="correct">1. 変更できる</input>
+                <input type="radio" name="answer" value="incorrect">2. 変更出来ない</input>
+                <input type="radio" name="answer" value="incorrect">3. 一部のスマートフォンは変更できるものがある</input>
+            </div>
             {% csrf_token %}
             <input type="image" src="{% static 'image/next1.png' %}" name="next_button">
         </form>

@@ -10,11 +10,12 @@
 <body>
     <div style="text-align:center">
         <h2>問題3</h2>
-        <p>3</p>
+        <p>スマートフォンの機能ににライトがあるので、非常時や暗いときに使用できる</p>
         <form action="{% url 'move_to_quiz4' %}" method="post">
-            <input type="radio" name="answer" value="incorrect">1. </input>
-            <input type="radio" name="answer" value="correct">2. </input>
-            <input type="radio" name="answer" value="incorrect">3. </input>
+            <div>
+                <input type="radio" name="answer" value="correct">正しい </input>
+                <input type="radio" name="answer" value="incorrect">間違い</input>
+            </div>
             {% csrf_token %}
             <input type="image" src="{% static 'image/next1.png' %}" name="next_button">
         </form>

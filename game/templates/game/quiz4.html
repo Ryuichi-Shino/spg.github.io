@@ -10,11 +10,13 @@
 <body>
     <div style="text-align:center">
         <h2>問題4</h2>
-        <p>4</p>
+        <p>SNSは誰の情報を見ることができる？</p>
         <form action="{% url 'move_to_quiz5' %}" method="post">
-            <input type="radio" name="answer" value="incorrect">1. </input>
-            <input type="radio" name="answer" value="incorrect">2. </input>
-            <input type="radio" name="answer" value="correct">3. </input>
+            <div>
+                <input type="radio" name="answer" value="incorrect">1. 友達だけ</input>
+                <input type="radio" name="answer" value="incorrect">2. 日本中の人</input>
+                <input type="radio" name="answer" value="correct">3. 世界中の人</input>
+            </div>
             {% csrf_token %}
             <input type="image" src="{% static 'image/next1.png' %}" name="next_button">
         </form>
