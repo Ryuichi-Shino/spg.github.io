@@ -13,19 +13,14 @@
         <h2>問題１</h2>
         <p>スマートフォンの文字サイズは…</p>
         <form action="{% url 'move_to_quiz2' %}" method="post">
-            <input type="radio" name="answer" value="a">1. 変更できる</input>
-            <input type="radio" name="answer" value="b">2. 変更出来ない</input>
-            <input type="radio" name="answer" value="c">3. 一部のスマートフォンは変更できるものがある</input>
-        <button type="button" onclick="answerQuiz1()">回答</button>
-        <p>{{ score.score }}</p>
-        <div id="score-container">
-            <p id="score-message"></p>
-        </div>
-        <button class="btn-score" type="button" onclick="showScore()">合計得点を見る</button>
+            <div>
+                <input type="radio" name="answer" value="correct">1. 変更できる</input>
+                <input type="radio" name="answer" value="incorrect">2. 変更出来ない</input>
+                <input type="radio" name="answer" value="incorrect">3. 一部のスマートフォンは変更できるものがある</input>
+            </div>
             {% csrf_token %}
             <input type="image" src="{% static 'image/next1.png' %}" name="next_button">
         </form>
     </div>
-    
 </body>
 </html>
