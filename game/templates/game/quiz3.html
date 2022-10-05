@@ -13,9 +13,13 @@
         <h2>問題3</h2>
         <p>スマートフォンの機能ににライトがあるので、非常時や暗いときに使用できる</p>
         <form action="{% url 'move_to_quiz4' %}" method="post">
-            <div>
-                <input type="radio" name="answer" value="correct">正しい </input>
-                <input type="radio" name="answer" value="incorrect">間違い</input>
+            <div class="row">
+                <div class="form-group mx-sm-3 mb-2">
+                    <input type="radio" name="answer" value="correct">正しい </input>
+                </div>
+                <div class="form-group mx-sm-3 mb-2">
+                    <input type="radio" name="answer" value="incorrect">間違い</input>
+                </div>
             </div>
             {% csrf_token %}
             <input type="image" src="{% static 'image/next1.png' %}" name="next_button">

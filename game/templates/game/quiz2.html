@@ -13,10 +13,16 @@
         <h2>問題2</h2>
         <p>スマートフォンの画面の明るさは…</p>
         <form action="{% url 'move_to_quiz3' %}" method="post">
-            <div>
-                <input type="radio" name="answer" value="correct">1. 変更できる</input>
-                <input type="radio" name="answer" value="incorrect">2. 変更できない</input>
-                <input type="radio" name="answer" value="incorrect">3. 一部のスマートフォンは変更できるものがある</input>
+            <div class="row">
+                <div class="form-group mx-sm-3 mb-2">
+                    <input type="radio" name="answer" value="correct">1. 変更できる</input>
+                </div>
+                <div class="form-group mx-sm-3 mb-2">
+                    <input type="radio" name="answer" value="incorrect">2. 変更できない</input>
+                </div>
+                <div class="form-group mx-sm-3 mb-2">
+                    <input type="radio" name="answer" value="incorrect">3. 一部のスマートフォンは変更できるものがある</input>
+                </div>
             </div>
             {% csrf_token %}
             <input type="image" src="{% static 'image/next1.png' %}" name="next_button">

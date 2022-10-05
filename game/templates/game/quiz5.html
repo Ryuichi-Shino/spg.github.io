@@ -13,10 +13,16 @@
         <h2>問題5</h2>
         <p>64GBの容量で写真は何枚撮れる？</p>
         <form action="{% url 'move_to_result' %}" method="post">
-            <div>
-                <input type="radio" name="answer" value="incorrect">1. 約3,000枚</input>
-                <input type="radio" name="answer" value="correct">2. 約50,000枚</input>
-                <input type="radio" name="answer" value="incorrect">3.約200,000枚</input>
+            <div class="row">
+                <div class="form-group mx-sm-3 mb-2">
+                    <input type="radio" name="answer" value="incorrect">1. 約3,000枚</input>
+                </div>
+                <div class="form-group mx-sm-3 mb-2">
+                    <input type="radio" name="answer" value="correct">2. 約50,000枚</input>
+                </div>
+                <div class="form-group mx-sm-3 mb-2">
+                    <input type="radio" name="answer" value="incorrect">3.約200,000枚</input>
+                </div>
             </div>
             <br>
             {% csrf_token %}
