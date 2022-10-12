@@ -1,5 +1,16 @@
-h1{
-    color: orange;
+body {
+  background-color: #fff;
+  font-family:sans-serif
+}
+
+
+.a{
+  line-height:0.95em;
+  font-weight:bold;
+  color: green;
+  text-shadow: 
+    0.04em 0.02em 0 #000000, 
+    0.08em 0.05em 0 rgba(253, 241, 68, 0.979);
 }
 
 .sample {
@@ -20,10 +31,10 @@ h1{
   text-align:center;
   line-height:0.95em;
   font-weight:bold;
-  color: #07f403;
+  color: green;
   text-shadow: 
-    0.04em 0.02em 0 #B0BEC5, 
-    0.08em 0.05em 0 rgba(0, 0, 0, 0.6);
+    0.04em 0.02em 0 #000000, 
+    0.08em 0.05em 0 rgba(253, 241, 68, 0.979);
 }
 
 #score-container {
@@ -31,6 +42,53 @@ h1{
   height: 50px;
 }
 
-#choice {
-  
+.header__inner {
+  padding: 0 20px; /*左右の余白確保*/
+  display: flex; /*ロゴとハンバーガーメニューを横に並べる*/
+  align-items: center;
+  justify-content: space-between;
+  height: inherit; /*親要素の高さを継承*/
+  position: relative;
+}
+
+.header{
+  background-color: rgb(135, 203, 243);
+}
+
+/* ヘッダーのロゴ部分 */
+.header__title {
+  width: 200px;
+}
+
+
+.header__title img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* ヘッダーのナビ部分 */
+.header__nav {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  transform: translateX(100%); 
+  background-color: #fff; /*ハンバーガーメニュークリック時のナビゲーションメニュー背景色*/
+  transition: ease .4s; /*ハンバーガーメニュークリック時のナビゲーションメニュー出現を遅延*/
+}
+
+/* ハンバーガーメニュー */
+.header__hamburger {
+  width: 48px;
+  height: 100%;
+}
+
+.hamburger {
+  background-color: transparent; /*buttonタグデフォルトスタイルを打ち消し*/
+  border-color: transparent; /*buttonタグデフォルトスタイルを打ち消し*/
+  z-index: 9999;
+  cursor: pointer;
 }
