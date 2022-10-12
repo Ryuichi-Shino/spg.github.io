@@ -15,29 +15,6 @@
             <h1 class="mt-4">問題１</h1>
             <p>スマートフォンの文字サイズは…</p>
         </div>
-
-        <div>
-            <input type="button" value="Check" id="checkButton">
-        </div>
-
-        <script>
-            var quizradio = document.getElementsByName("quiz");
-
-            function buttonClick(){
-                if(quizradio.value == "1"){
-                    count();
-                }
-
-                console.log(result());
-            }
-
-        </script>
-
-        <button class="btn-score" type="button" onclick="showScore()">合計得点を見る</button>
-
-
-
-        <form action="{% url 'move_to_quiz2' %}" method="post">
         <form class="form-inline" action="{% url 'move_to_quiz2' %}" method="post">
             <div class="row">
                 <div class="form-group mx-sm-3 mb-2">
@@ -50,7 +27,7 @@
                     <input type="radio" name="answer" value="incorrect">3. 一部のスマートフォンは変更できるものがある</input>
                 </div>
             </div>
-            
+            {% csrf_token %}
             <input type="image" src="{% static 'image/next1.png' %}" name="next_button">
         </form>
         <div class="progress" style="height: 30px;">
