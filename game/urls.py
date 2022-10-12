@@ -1,5 +1,7 @@
 from django.urls import path
 from . import views
+import sys
+sys.dont_write_bytecode = True
 
 urlpatterns = [
 	path('', views.index, name='index'),
@@ -17,5 +19,3 @@ urlpatterns = [
     path('templates/result', views.move_to_result, name='move_to_result'),
 ]
 
-import sys
-sys.dont_write_bytecode = True

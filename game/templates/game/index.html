@@ -2,7 +2,9 @@
 {% load static %}
 <html lang="ja">
 <head>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="../../static/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../../static/js/bootstrap.min.js"></script>
     <meta name="viewport"
       content="width=320,
       height=480,
@@ -31,8 +33,23 @@
     <div style="text-align:center">
         <h1 class="sample">めざせスマホマスター!!</h1>
 
-        {% csrf_token %}
-            <image src="{% static 'image/top.png' %}">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+            <!-- スライドさせる画像の設定 -->
+            {% csrf_token %}
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{% static 'image/top.png' %}" alt="第1スライド" class="d-block w-100">
+                </div><!-- /.carousel-item -->
+                <div class="carousel-item">
+                    <img src="{% static 'image/sumaho.jpg' %}" alt="第2スライド" class="d-block w-100">
+                </div><!-- /.carousel-item -->
+                <div class="carousel-item">
+                    <img src="{% static 'image/happy.png' %}" alt="第3スライド" class="d-block w-100">
+                </div><!-- /.carousel-item -->
+            </div><!-- /.carousel-inner -->
+        </div><!-- /.carousel -->
+
+        
 
         <hr>
 

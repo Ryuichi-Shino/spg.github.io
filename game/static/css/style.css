@@ -12,6 +12,10 @@ h1{
     0.08em 0.05em 0 rgba(0, 0, 0, 0.6);
 }
 
+.sample:hover {
+  background-color: #097db3;
+}
+
 .sample2 {
   text-align:center;
   line-height:0.95em;
@@ -25,4 +29,8 @@ h1{
 #score-container {
   border: 1px solid black;
   height: 50px;
+}
+
+#choice {
+  
 }
