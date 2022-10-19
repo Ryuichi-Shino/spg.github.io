@@ -72,7 +72,7 @@ function push_Keydown(event){
 			Q_i = 0;//回答初期値・現在どこまで合っているか判定している文字番号
 			Q_l = Q[Q_No].length;//計算用の文字の長さ
 
-
+			image.src = "../../static/image/" + Q[Q_No] + ".png"; //画像を出す
 			document.getElementById("start").innerHTML = Q[Q_No].substring(Q_i, Q_l); //新たな問題を書き出す
 
 		}
