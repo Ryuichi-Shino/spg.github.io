@@ -23,10 +23,6 @@ body {
     0.08em 0.05em 0 rgba(0, 0, 0, 0.6);
 }
 
-.sample:hover {
-  background-color: #097db3;
-}
-
 .sample2 {
   text-align:center;
   line-height:0.95em;
@@ -35,6 +31,10 @@ body {
   text-shadow: 
     0.04em 0.02em 0 #000000, 
     0.08em 0.05em 0 rgba(253, 241, 68, 0.979);
+}
+
+.sample2:hover {
+  color: aqua;
 }
 
 #score-container {
