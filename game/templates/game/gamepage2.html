@@ -1,22 +1,48 @@
-<!-- 見えない部分 -->
-<html>
+<!DOCTYPE html>
+{% load static %}
+<html lang="ja">
 <head>
 <script>
 
 	let Q = ["apple","banana","melon","mango","starwberry","blueberry","orange"];//問題文
-	let Q_No = Math.floor( Math.random() * Q.length);//問題をランダムで出題する
+	let Q_length = 7;
+	let Q_No = 0;
 
 	let Q_i = 0;//回答初期値・現在単語どこまで合っているか判定している文字番号
 	let Q_l = Q[Q_No].length;//計算用の文字の長さ
 
+	var timer;
+	var startTime; // 開始時刻
+	var holdTime = 0;//終了時間
+
+
+
 
 window.addEventListener("keydown", push_Keydown);
+
+
+function start(){
+	startTime = Date.now();
+}
+
+function stop(){
+	clearInterval(timer);
+	holdTime = Date.now() - startTime;
+	holdTime /= 1000;
+	holdTime = parseInt(holdTime);
+}
 
 function push_Keydown(event){
 
 	let keyCode = event.key;
+
+	if(keyCode == " "){//時間測定開始
+		start();
+	}
+
 	if (Q_l == Q_l-Q_i){
 
+		document.getElementById("img").src = Q[Q_No] + ".png"; //画像を出す
 		document.getElementById("start").innerHTML = Q[Q_No].substring(Q_i, Q_l); //問題を書き出す
 
 		}
@@ -25,16 +51,27 @@ function push_Keydown(event){
 	if (Q[Q_No].charAt(Q_i) == keyCode) { //押したキーが合っていたら
 
 		Q_i++; //判定する文章に１足す
+
+
 		document.getElementById("start").innerHTML = Q[Q_No].substring(Q_i, Q_l); //問題を書き出す
 
 		if (Q_l-Q_i === 0){ //全部正解したら
 	
-	
-			Q_No = Math.floor( Math.random() * Q.length);//問題をランダムで出題する
+			Q_No += 1 //次の問題
+
+			if (Q_No == Q_length){ //問題が全て終わったら
+				stop();//時間を止める
+				if	(holdTime.toString(10) < "10"){
+					document.getElementById("start").innerHTML = "あなたのタイムは " + holdTime.toString(10) +" 秒";
+				} else {
+				document.getElementById("start").innerHTML = "あなたのタイムは " + holdTime.toString(10) +" 秒";
+				}
+			}
+
 			Q_i = 0;//回答初期値・現在どこまで合っているか判定している文字番号
 			Q_l = Q[Q_No].length;//計算用の文字の長さ
 
-
+			document.getElementById("img").src = Q[Q_No] + ".png"; //画像を出す
 			document.getElementById("start").innerHTML = Q[Q_No].substring(Q_i, Q_l); //新たな問題を書き出す
 
 		}
@@ -44,11 +81,19 @@ function push_Keydown(event){
 </script>
 
 </head>
-<!-- ↓ここから見える部分↓ -->
+
 <body>
 
 <center>
-<h1 id="start" class="text">何かキーを押して下さい</h1>
+
+<p><img src="" id="img" /></p>
+<h1 id="start" class="text">スペースを押して下さい</h1>
+
+<form action="{% url 'index' %}" method="post">
+	{% csrf_token %}
+	<input type="image" src="{% static 'image/back.png' %}" name="start_button">
+</form>
+
 </center>
 
 </body>
