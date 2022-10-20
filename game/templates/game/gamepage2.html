@@ -2,6 +2,7 @@
 {% load static %}
 <html lang="ja">
 <head>
+<link rel="stylesheet" type="text/css" href="../../static/css/style.css">
 <script>
 
 	let Q = ["apple","banana","melon","mango","starwberry","blueberry","orange"];//問題文
@@ -94,6 +95,8 @@ function push_Keydown(event){
 	{% csrf_token %}
 	<input type="image" src="{% static 'image/back.png' %}" name="start_button">
 </form>
+
+<input type="text">
 
 </center>
 
