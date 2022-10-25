@@ -70,12 +70,6 @@
         </form>
         <hr>
 
-        <div class="btn" onclick="audio()">音がなるよ!!</div>
- 
-<audio id="btn_audio">
-    <source src="{% static 'sound/sound.mp3' %}" type="audio/mp3">
-</audio>
-
         <h2 class="sample2">フリック入力に挑戦</h2>
         <form action="{% url 'move_to_gamepage2' %}" method="post">
             {% csrf_token %}
