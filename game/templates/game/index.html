@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="../../static/css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="../../static/js/bootstrap.min.js"></script>
+    <script src="../../static/js/style.js"></script>
     <meta name="viewport"
       content="width=320,
       height=480,
@@ -64,10 +65,15 @@
         <hr>
 
         <h2 class="sample2">スマホクイズに挑戦</h2>
-        <form action="{% url 'move_to_gamepage' %}" method="post" id="quiz">
-            {% csrf_token %}
-            <input type="image" src="{% static 'image/start_button.png' %}" name="start_button">
-        </form>
+        <div class="btn" onclick="audio()">
+            <form action="{% url 'move_to_gamepage' %}" method="post" id="quiz">
+                {% csrf_token %}
+                <input type="image" src="{% static 'image/start_button.png' %}" name="start_button">
+            </form>
+        </div>
+            <audio id="btn_audio">
+                <source src="../../static/sound/sound.mp3" type="audio/mp3">
+            </audio>
         <hr>
 
         <h2 class="sample2">フリック入力に挑戦</h2>
