@@ -2,7 +2,11 @@
 {% load static %}
 <html lang="ja">
 <head>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="../../static/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../static/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../../static/js/bootstrap.min.js"></script>
+    <script src="../../static/js/style.js"></script>
     <meta name="viewport"
       content="width=320,
       height=480,
@@ -15,32 +19,64 @@
 </head>
 
 <body>
-    <font size="4">
-    <form action="{% url 'move_to_optionpage' %}" method="post" id="option">
-        <div style="text-align:right">
-            {% csrf_token %}
-            <input type="image" src="{% static 'image/option.png' %}" name="option_button">
-        </div>
-    </form>
+    
+    <header class="header">
+        <div class="header__inner">
+            <h1 class="header__title">
+                <form action="{% url 'index' %}" method="post">
+                    {% csrf_token %}
+                    <input type="image" src="../../static/image/logo.png">
+                </form>
+            </h1>
 
-    <h3>文字サイズ変更</h3>
+            <form action="{% url 'move_to_optionpage' %}" method="post" id="option">
+                <div style="text-align:right">
+                    {% csrf_token %}
+                    <input type="image" src="{% static 'image/option.png' %}" name="option_button">
+                </div>
+            </form>
+        </div>
+    </header>
+
+    <font size=4>
+    <h3 class="a">文字サイズ変更</h3>
     <button onclick="location.href='/smallindex'">小</button>
     <button disabled>中</button>
     <button onclick="location.href='/bigindex'">大</button>
         
     <div style="text-align:center">
-        <h1 class="sample">めざせスマホマスター!!</h1>
 
-        {% csrf_token %}
-            <image src="{% static 'image/top.png' %}">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+            <!-- スライドさせる画像の設定 -->
+            {% csrf_token %}
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{% static 'image/top.png' %}" alt="第1スライド" class="d-block w-100">
+                </div><!-- /.carousel-item -->
+                <div class="carousel-item">
+                    <img src="{% static 'image/sumaho.jpg' %}" alt="第2スライド" class="d-block w-100">
+                </div><!-- /.carousel-item -->
+                <div class="carousel-item">
+                    <img src="{% static 'image/happy.png' %}" alt="第3スライド" class="d-block w-100">
+                </div><!-- /.carousel-item -->
+            </div><!-- /.carousel-inner -->
+        </div><!-- /.carousel -->
+
+        
 
         <hr>
-
-        <h2 class="sample2">スマホクイズに挑戦</h2>
-        <form action="{% url 'move_to_gamepage' %}" method="post" id="quiz">
-            {% csrf_token %}
-            <input type="image" src="{% static 'image/start_button.png' %}" name="start_button">
-        </form>
+        <div class="btn" onclick="audio()">
+            <h2 class="sample2">スマホクイズに挑戦</h2>
+        </div>
+        <div class="btn" onclick="audio()">
+            <form action="{% url 'move_to_gamepage' %}" method="post" id="quiz">
+                {% csrf_token %}
+                <input type="image" src="{% static 'image/start_button.png' %}" name="start_button">
+            </form>
+        </div>
+            <audio id="btn_audio">
+                <source src="../../static/sound/sound1.mp3" type="audio/mp3">
+            </audio>
         <hr>
 
         <h2 class="sample2">フリック入力に挑戦</h2>
@@ -55,9 +91,12 @@
             {% csrf_token %}
             <input type="image" src="{% static 'image/start_button.png' %}" name="start_button">
         </form>
-
-        
     </div>
     </font>
+
+    <footer class="footer">
+        <h1>hello</h1>
+    </footer>
+
 </body>
 </html>
