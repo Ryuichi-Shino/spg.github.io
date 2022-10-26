@@ -89,3 +89,12 @@ body {
   width: 20px;
   height: 20px;
 }
+
+p{
+  color: red;
+}
+
+.up{
+  position: absolute;
+}
+
