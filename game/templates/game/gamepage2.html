@@ -2,7 +2,10 @@
 {% load static %}
 <html lang="ja">
 <head>
-<link rel="stylesheet" type="text/css" href="../../static/css/style.css">
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="../../static/css/style.css">
+</head>
+
 <script>
 
 	let Q = ["apple","banana","melon","mango","starwberry","blueberry","orange"];//問題文
@@ -84,13 +87,18 @@ function push_Keydown(event){
 
 </script>
 
-</head>
-
 <body>
 
 <center>
 
 <p><img src="" id="img" /></p>
+
+<br>
+<br>
+
+<p><textarea cols="50" rows="15"></textarea></p>
+
+
 <h1 id="start" class="text">スペースを押して下さい</h1>
 <h1 id="result" class="text"></h1>
 
@@ -99,7 +107,6 @@ function push_Keydown(event){
 	<input type="image" src="{% static 'image/back.png' %}" name="start_button">
 </form>
 
-<input type="text">
 
 </center>
 
