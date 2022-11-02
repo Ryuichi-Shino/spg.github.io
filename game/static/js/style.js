@@ -58,3 +58,7 @@ function delay() {
     target.innerText = "ボタンがクリックされました。";
   }, 2000);
 }
+
+function bgm() {
+  document.getElementById('bgm_audio').play(); //クリックしたら音を再生
+}

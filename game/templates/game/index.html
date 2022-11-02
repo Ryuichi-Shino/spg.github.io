@@ -18,23 +18,30 @@
     <title>スマホゲーム</title>
 </head>
 
-<body>
+<body>    
     
     <header class="header">
         <div class="header__inner">
             <h1 class="header__title">
                 <form action="{% url 'index' %}" method="post">
                     {% csrf_token %}
-                    <input type="image" src="../../static/image/logo.png">
+                    <input type="image" src="../../static/image/logo.png" width="200px">
                 </form>
             </h1>
 
+            <div class="box">
             <form action="{% url 'move_to_optionpage' %}" method="post" id="option">
-                <div style="text-align:right">
                     {% csrf_token %}
                     <input type="image" src="{% static 'image/option.png' %}" name="option_button">
-                </div>
             </form>
+
+            <div class="bgm" onclick="bgm()">
+                <image type="image" src="{% static 'image/BGM.png' %}"></image>
+                <audio id="bgm_audio">
+                    <source src="../../static/sound/BGM.mp3" type="audio/mp3">
+                </audio>
+            </div>
+            </div>
         </div>
     </header>
 
