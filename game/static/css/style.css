@@ -17,14 +17,13 @@ body {
   text-align:center;
   line-height:0.95em;
   font-weight:bold;
-  color: #03A9F4;
+  color: #87ceeb;
   text-shadow: 
     0.04em 0.02em 0 #B0BEC5, 
     0.08em 0.05em 0 rgba(0, 0, 0, 0.6);
 }
 
 .sample2 {
-
   text-align:center;
   line-height:0.95em;
   font-weight:bold;
@@ -35,7 +34,7 @@ body {
 }
 
 .sample2:hover {
-  color: aqua;
+  color: #87ceeb;
 }
 
 #score-container {
@@ -53,17 +52,18 @@ body {
 }
 
 .header{
-  background-color: rgb(135, 203, 243);
+  background-color: #87ceeb(135, 203, 243);
 }
 
 /* ヘッダーのロゴ部分 */
 .header__title {
-  width: 2px;
+  width: 100px;
 }
 
 
 .header__title img {
   display: block;
+  text-align: center;
   width: 60%;
   height: 60%;
 }
@@ -73,7 +73,7 @@ body {
 .footer {
   width: 100%;
   height: 120px;
-  background-color: #03A9F4;
+  background-color: #87ceeb;
 }
 
 .class input[type=text] {
@@ -82,11 +82,15 @@ body {
 }
 
 #img {
-  width: 400px;
-  height: 200px;
+  width: 20px;
+  height: 20px;
 }
 
-.box  {
-  display: flex;
-  justify-content: flex-end;
+p{
+  color: red;
 }
+
+.up{
+  position: absolute;
+}
+
