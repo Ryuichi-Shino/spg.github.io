@@ -25,15 +25,11 @@
             <h1 class="header__title">
                 <form action="{% url 'index' %}" method="post">
                     {% csrf_token %}
-                    <input type="image" src="../../static/image/logo.png" width="200px">
+                    <input type="image" src="../../static/image/logo.png" width="400px" height="200px">
                 </form>
             </h1>
 
             <div class="box">
-            <form action="{% url 'move_to_optionpage' %}" method="post" id="option">
-                    {% csrf_token %}
-                    <input type="image" src="{% static 'image/option.png' %}" name="option_button">
-            </form>
 
             <div class="bgm" onclick="bgm()">
                 <image type="image" src="{% static 'image/BGM.png' %}"></image>
