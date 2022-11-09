@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-color: #fff;
   font-family:sans-serif
@@ -24,7 +29,6 @@ body {
 }
 
 .sample2 {
-
   text-align:center;
   line-height:0.95em;
   font-weight:bold;
@@ -35,7 +39,7 @@ body {
 }
 
 .sample2:hover {
-  color: aqua;
+  color: #87ceeb;
 }
 
 #score-container {
@@ -53,12 +57,12 @@ body {
 }
 
 .header{
-  background-color: rgb(135, 203, 243);
+  background-color: #87ceeb(135, 203, 243);
 }
 
 /* ヘッダーのロゴ部分 */
 .header__title {
-  width: 2px;
+  width: 100px;
 }
 
 
@@ -82,11 +86,15 @@ body {
 }
 
 #img {
-  width: 400px;
-  height: 200px;
+  width: 20px;
+  height: 20px;
 }
 
-.box  {
-  display: flex;
-  justify-content: flex-end;
+p{
+  color: red;
 }
+
+.up{
+  position: absolute;
+}
+
