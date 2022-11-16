@@ -93,6 +93,77 @@ def move_to_quiz5(request):
     context = { 'score':score }
     return render(request, "game/quiz5.html", context)
 
+def move_to_quiz6(request):
+    try:
+        score = Score.objects.get(pk=1)
+    except Score.DoesNotExist:
+        score = Score(score=0)
+        score.save()
+
+    if request.method=='POST':
+        ans = request.POST['answer']
+        if (ans == 'correct'):
+            score.increment()
+    context = { 'score':score }
+    return render(request, "game/quiz6.html", context)
+
+def move_to_quiz7(request):
+    try:
+        score = Score.objects.get(pk=1)
+    except Score.DoesNotExist:
+        score = Score(score=0)
+        score.save()
+
+    if request.method=='POST':
+        ans = request.POST['answer']
+        if (ans == 'correct'):
+            score.increment()
+    context = { 'score':score }
+    return render(request, "game/quiz7.html", context)
+
+def move_to_quiz8(request):
+    try:
+        score = Score.objects.get(pk=1)
+    except Score.DoesNotExist:
+        score = Score(score=0)
+        score.save()
+
+    if request.method=='POST':
+        ans = request.POST['answer']
+        if (ans == 'correct'):
+            score.increment()
+    context = { 'score':score }
+    return render(request, "game/quiz8.html", context)
+
+def move_to_quiz9(request):
+    try:
+        score = Score.objects.get(pk=1)
+    except Score.DoesNotExist:
+        score = Score(score=0)
+        score.save()
+
+    if request.method=='POST':
+        ans = request.POST['answer']
+        if (ans == 'correct'):
+            score.increment()
+    context = { 'score':score }
+    return render(request, "game/quiz9.html", context)
+
+def move_to_quiz10(request):
+    try:
+        score = Score.objects.get(pk=1)
+    except Score.DoesNotExist:
+        score = Score(score=0)
+        score.save()
+
+    if request.method=='POST':
+        ans = request.POST['answer']
+        if (ans == 'correct'):
+            score.increment()
+    context = { 'score':score }
+    return render(request, "game/quiz10.html", context)
+
+
 
 def move_to_result(request):
     try:

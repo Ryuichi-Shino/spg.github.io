@@ -16,6 +16,11 @@ urlpatterns = [
     path('templates/quiz3', views.move_to_quiz3, name='move_to_quiz3'),
     path('templates/quiz4', views.move_to_quiz4, name='move_to_quiz4'),
     path('templates/quiz5', views.move_to_quiz5, name='move_to_quiz5'),
+    path('templates/quiz6', views.move_to_quiz5, name='move_to_quiz5'),
+    path('templates/quiz7', views.move_to_quiz5, name='move_to_quiz5'),
+    path('templates/quiz8', views.move_to_quiz5, name='move_to_quiz5'),
+    path('templates/quiz9', views.move_to_quiz5, name='move_to_quiz5'),
+    path('templates/quiz10', views.move_to_quiz5, name='move_to_quiz5'),
     path('templates/result', views.move_to_result, name='move_to_result'),
 ]
 
