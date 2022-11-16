@@ -2,11 +2,11 @@
 {% load static %}
 <html lang="ja">
 <head>
-    <link rel="stylesheet" type="text/css" href="../../static/css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="../../static/css/style.css">
+        <script src="../../static/js/style.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../static/css/bootstrap.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="../../static/js/bootstrap.min.js"></script>
-    <script src="../../static/js/style.js"></script>
     <meta name="viewport"
       content="width=320,
       height=480,
@@ -25,15 +25,11 @@
             <h1 class="header__title">
                 <form action="{% url 'index' %}" method="post">
                     {% csrf_token %}
-                    <input type="image" src="../../static/image/logo.png" width="200px">
+                    <input type="image" src="../../static/image/logo.png" width="400px" height="200px">
                 </form>
             </h1>
 
             <div class="box">
-            <form action="{% url 'move_to_optionpage' %}" method="post" id="option">
-                    {% csrf_token %}
-                    <input type="image" src="{% static 'image/option.png' %}" name="option_button">
-            </form>
 
             <div class="bgm" onclick="bgm()">
                 <image type="image" src="{% static 'image/BGM.png' %}"></image>
@@ -102,7 +98,6 @@
     </font>
 
     <footer class="footer">
-        <h1>hello</h1>
     </footer>
 
 </body>
