@@ -11,7 +11,7 @@
 <body>
     <div style="text-align:center">
         <h1>結果</h1>
-        <p>あなたの得点は {{ score.score }} / 5</p>
+        <p>あなたの得点は {{ score.score }} / 10</p>
         <image src="{% static 'image/happy.png' %}">
         <form action="{% url 'index' %}" method="post">
             {% csrf_token %}
