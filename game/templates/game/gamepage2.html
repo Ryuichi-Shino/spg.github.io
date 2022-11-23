@@ -5,6 +5,7 @@
 	<meta charset="utf-8" />
 	<link rel="stylesheet" type="text/css" href="../../static/css/style.css">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+	<title>フリックゲーム</title>
 </head>
 
 <script>
@@ -102,15 +103,14 @@ function push_Keydown(event){
 <p><img src="" id="img" /></p>
 
 <br>
-<br>
 
-<p><textarea cols="50" rows="15"></textarea></p>
+<p><textarea cols="30" rows="5"></textarea></p>
 
 <h1 id="result" class="text"></h1>
 
 <h1 id="text" class="text"></h1>
 
-<h1 id="start" class="text">↑をクリックして、ゲームに挑戦しよう！</h1>
+<h1 id="start" class="text">↑をタップして、空白ボタンを押したらスタート！</h1>
 
 <form action="{% url 'index' %}" method="post">
 	{% csrf_token %}

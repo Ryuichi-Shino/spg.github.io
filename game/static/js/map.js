@@ -1,10 +1,26 @@
-let map;
-
 function initMap() {
-  map = new google.maps.Map(document.getElementById("map"), {
-    center: new google.maps.LatLng(-33.91722, 151.23064),
-    zoom: 16,
-  });
+	function success(pos) {
+		var lat = pos.coords.latitude;
+		var lng = pos.coords.longitude;
+		var latlng = new google.maps.LatLng(lat, lng); //中心の緯度, 経度
+		var map = new google.maps.Map(document.getElementById('maps'), {
+			zoom: 17,
+			center: latlng
+		});
+		var marker_1 = new google.maps.Marker({
+			position: latlng, //マーカーの位置（必須）
+			map: map //マーカーを表示する地図
+		});
+	}
+	function fail(error) {
+		alert('位置情報の取得に失敗しました。エラーコード：' + error.code);
+		var latlng = new google.maps.LatLng(35.78019425, 139.7155693); //東京駅
+		var map = new google.maps.Map(document.getElementById('maps'), {
+			zoom: 10,
+			center: latlng
+		});
+	}
+	navigator.geolocation.getCurrentPosition(success, fail);
 
   const iconBase =
     "https://developers.google.com/maps/documentation/javascript/examples/full/images/";
