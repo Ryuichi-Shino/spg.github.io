@@ -1,58 +1,14 @@
 <!DOCTYPE html>
 <html lang="ja">
 
-<head>
-<meta charset="UTF-8">
-<title>Sample_GoogleMap</title>
+  <head>
+    <meta charset="UTF-8">
+    <title>Game_Map</title>
+  </head>
 
-<script src="http://maps.google.com/maps/api/js?key=AIzaSyDYrCowSFc0OvcqfWJ-kbT-RjeqzihRaEM&language=ja"></script>
-
-<style>
-html { height: 100% }
-body { height: 100% }
-#map { height: 100%; width: 100%}
-</style>
-</head>
-
-<body>
-<div id="map"></div>
-
-<div id="console_log"></div>
-<div id="console_log2"></div>
-
-
-<script>
-var MyLatLng = new google.maps.LatLng(35.777615, 139.7209868);
-
-var Options = {
- zoom: 15,      //地図の縮尺値
- center: MyLatLng,    //地図の中心座標
- mapTypeId: 'roadmap'   //地図の種類
-};
-
-var map = new google.maps.Map(document.getElementById('map'), Options);
-
-function success(position) {
-	console.log("緯度:" + position.coords.latitude);
-  console.log = function (log) {
-document.getElementById('console_log').innerHTML += log + "<br>";
-}
-
-	console.log("経度:" + position.coords.longitude);
-  console.log = function (log) {
-document.getElementById('console_log2').innerHTML += log + "<br>";
-}
+  <body>
+    <h1>説明</h1>
+    <button onclick="location.href='https://www.google.co.jp/maps'"></button>
   
-}
-
-function error() {
-    document.write("位置情報の取得に失敗しました。");
-}
-
-navigator.geolocation.getCurrentPosition(success, error);
-
-
-</script>
-
-</body>
+  </body>
 </html>
