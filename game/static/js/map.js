@@ -1,10 +1,21 @@
-let map;
+var map;
+var directions;
 
 function initMap() {
-  map = new google.maps.Map(document.getElementById("map"), {
-    center: new google.maps.LatLng(-33.91722, 151.23064),
-    zoom: 16,
-  });
+  var useragent = navigator.userAgent;
+  var mapdiv = document.getElementById("map");
+  if (useragent.indexOf('iPhone') != -1 || useragent.indexOf('Android') != -1){
+    mapdiv.style.width = '100%';
+    mapdiv.style.height = '100%';
+  }  
+
+  var opts = {
+    zoom: 15,
+    center: new google.maps.LatLng(35.778022, 139.720245)
+  };
+
+  var map = new google.maps.Map(mapdiv, opts);
+  var directions = new GDirections(map, document.getElementById('route'));
 
   const iconBase =
     "https://developers.google.com/maps/documentation/javascript/examples/full/images/";
@@ -28,74 +39,7 @@ function initMap() {
       position: new google.maps.LatLng(-33.91539, 151.2282),
       type: "info",
     },
-    {
-      position: new google.maps.LatLng(-33.91747, 151.22912),
-      type: "info",
-    },
-    {
-      position: new google.maps.LatLng(-33.9191, 151.22907),
-      type: "info",
-    },
-    {
-      position: new google.maps.LatLng(-33.91725, 151.23011),
-      type: "info",
-    },
-    {
-      position: new google.maps.LatLng(-33.91872, 151.23089),
-      type: "info",
-    },
-    {
-      position: new google.maps.LatLng(-33.91784, 151.23094),
-      type: "info",
-    },
-    {
-      position: new google.maps.LatLng(-33.91682, 151.23149),
-      type: "info",
-    },
-    {
-      position: new google.maps.LatLng(-33.9179, 151.23463),
-      type: "info",
-    },
-    {
-      position: new google.maps.LatLng(-33.91666, 151.23468),
-      type: "info",
-    },
-    {
-      position: new google.maps.LatLng(-33.916988, 151.23364),
-      type: "info",
-    },
-    {
-      position: new google.maps.LatLng(-33.91662347903106, 151.22879464019775),
-      type: "parking",
-    },
-    {
-      position: new google.maps.LatLng(-33.916365282092855, 151.22937399734496),
-      type: "parking",
-    },
-    {
-      position: new google.maps.LatLng(-33.91665018901448, 151.2282474695587),
-      type: "parking",
-    },
-    {
-      position: new google.maps.LatLng(-33.919543720969806, 151.23112279762267),
-      type: "parking",
-    },
-    {
-      position: new google.maps.LatLng(-33.91608037421864, 151.23288232673644),
-      type: "parking",
-    },
-    {
-      position: new google.maps.LatLng(-33.91851096391805, 151.2344058214569),
-      type: "parking",
-    },
-    {
-      position: new google.maps.LatLng(-33.91818154739766, 151.2346203981781),
-      type: "parking",
-    },
-    {
-      position: new google.maps.LatLng(-33.91727341958453, 151.23348314155578),
-      type: "library",
-    },
+
   ];
 
   // Create markers.
@@ -108,4 +52,21 @@ function initMap() {
   }
 }
 
-window.initMap = initMap;
+function initialize() {
+  if (GBrowserIsCompatible()) {
+    map = new GMap2(document.getElementById("map_canvas"));
+    map.setCenter(new GLatLng(35.681379,139.765577), 13);
+
+    directions = new GDirections(map, document.getElementById('route'));
+  }
+}
+
+function dispRoute() {
+  var from = document.getElementById("from").value;
+  var to = document.getElementById("to").value;
+
+  directions.clear();
+
+  str = 'from: ' + from + ' to: ' + to;
+  directions.load(str, {locale: 'ja_JP'});
+}

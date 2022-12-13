@@ -11,11 +11,14 @@
     <div style="text-align:center">
         <h1>クイズゲーム</h1>
         <h2>ゲーム説明</h2>
+        <p>スマートフォンの操作</p>
         <form action="{% url 'move_to_quiz1' %}" method="post" id="quiz">
             {% csrf_token %}
             <input type="image" src="{% static 'image/start_button.png' %}" name="start_button">
         </form>
     </div>
-
 </body>
+
+
+
 </html>
