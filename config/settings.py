@@ -129,6 +129,6 @@ STATICFILES_DIRS = (
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 ALLOWED_HOSTS = ["192.168.0.15", "192.168.0.7", "192.168.0.8", "localhost", "172.16.245.174", "172.16.241.186", "172.16.245.174"] # ローカルIPアドレスを追加
-
+#172.16.245.174 iniad wifi
 import sys
 sys.dont_write_bytecode = True
