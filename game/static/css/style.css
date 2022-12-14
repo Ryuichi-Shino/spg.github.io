@@ -83,8 +83,7 @@ body {
 }
 
 #img {
-  width: 20px;
-  height: 20px;
+  width: 2;
 }
 
 img :hover {
