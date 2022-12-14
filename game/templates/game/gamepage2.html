@@ -10,8 +10,8 @@
 
 <script>
 
-	let Q_mondai = ["こいずみきょうこ", "とうきょうたわー","おりんぴっく","まくどなるど","ぼーりんぐ","しゃんしゃん","きんぱちせんせい"]
-	let Q = ["こいす゛みきよ゛うこ", "とうきよ゛うたわー","おりんぴつ゛く","まつ゛く",] //判定用
+	let Q_mondai = ["とうきょうたわー","おりんぴっく","まくどなるど","しゃんしゃん","きんぱちせんせい"]
+	let Q = ["とうきよ゛うたわー","おりんぴつ゛く","まくどなるど","しや゛んしや゛ん","きんぱちせんせい"] //判定用
 
 	let Q_length = 2;
 	let Q_No = 0;
@@ -41,10 +41,10 @@ function stop(){
 }
 
 function push_Keydown(event){
-	let image = document.getElementById("img");
+	let image = document.getElementById("image");
 	let keyCode = event.key;
 
-	if(keyCode == "　"){//時間測定開始
+	if(keyCode == " "){//時間測定開始
 		start();
 	}
 
@@ -105,7 +105,7 @@ function push_Keydown(event){
 
 <center>
 
-<p><img src="" id="img" /></p>
+<p><img src="../../static/image/key.png" id="image" width="70%"/></p>
 
 <br>
 
