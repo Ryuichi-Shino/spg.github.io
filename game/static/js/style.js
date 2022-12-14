@@ -59,6 +59,19 @@ function delay() {
   }, 2000);
 }
 
+const bgm = document.querySelector('bgm_audio');
+
 function bgm() {
-  document.getElementById('bgm_audio').play(); //クリックしたら音を再生
+  if(! bgm.paused){
+    bgm.paused();
+  }
+  else{
+    bgm.play();
+  }
+}
+
+
+function audio() {
+  document.getElementById('btn_audio').currentTime = 0; //連続クリックに対応
+  document.getElementById('btn_audio').play(); //クリックしたら音を再生
 }

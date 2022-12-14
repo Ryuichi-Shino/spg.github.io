@@ -4,12 +4,16 @@
 <head>
 	<meta charset="utf-8" />
 	<link rel="stylesheet" type="text/css" href="../../static/css/style.css">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+	<title>フリックゲーム</title>
 </head>
 
 <script>
 
-	let Q = ["koizumikyoko","toukyoutawa-","melon","mango","starwberry","blueberry","orange"];//問題文
-	let Q_length = 7;
+	let Q_mondai = ["こいずみきょうこ", "とうきょうたわー"]
+	let Q = ["こいす゛みきよ゛うこ", "とうきよ゛うたわー"] //判定用
+
+	let Q_length = 2;
 	let Q_No = 0;
 
 	let Q_i = 0;//回答初期値・現在単語どこまで合っているか判定している文字番号
@@ -40,14 +44,16 @@ function push_Keydown(event){
 	let image = document.getElementById("img");
 	let keyCode = event.key;
 
-	if(keyCode == " "){//時間測定開始
+	if(keyCode == "　"){//時間測定開始
 		start();
 	}
 
-	if (Q_l == Q_l-Q_i){
+	if (Q_l == Q_l-Q_i){ 
 		
 		image.src = "../../static/image/" + Q[Q_No] + ".png"; //画像を出す
-		document.getElementById("start").innerHTML = Q[Q_No].substring(Q_i, Q_l); //問題を書き出す
+
+		document.getElementById("text").innerHTML = Q_mondai[Q_No];//問題を出す
+		document.getElementById("start").innerHTML = Q[Q_No][Q_i]; //判定文字を出す
 
 		}
 
@@ -56,8 +62,7 @@ function push_Keydown(event){
 
 		Q_i++; //判定する文章に１足す
 
-
-		document.getElementById("start").innerHTML = Q[Q_No].substring(Q_i, Q_l); //問題を書き出す
+		document.getElementById("start").innerHTML = Q[Q_No][Q_i]; //問題を書き出す
 
 		if (Q_l-Q_i === 0){ //全部正解したら
 	
@@ -67,11 +72,13 @@ function push_Keydown(event){
 				stop();//時間を止める
 				image.src = "../../static/image/happy.png";
 				if	(holdTime.toString(10) < "10"){
-					document.getElementById("start").innerHTML = "あなたのタイムは " + holdTime.toString(10) +" 秒";
-					document.getElementById("result").innerHTML = "あなたはフリック入力マスターです！！"
+					document.getElementById("result").innerHTML = "あなたのタイムは " + holdTime.toString(10) +" 秒";
+					document.getElementById("text").innerHTML = "";
+					document.getElementById("start").innerHTML = "あなたはフリック入力マスターです！！"
 				} else {
-					document.getElementById("start").innerHTML = "あなたのタイムは " + holdTime.toString(10) +" 秒";
-					document.getElementById("result").innerHTML = "あなたはフリック入力見習いです！！"
+					document.getElementById("result").innerHTML = "あなたのタイムは " + holdTime.toString(10) +" 秒";
+					document.getElementById("text").innerHTML = "";
+					document.getElementById("start").innerHTML = "あなたはフリック入力見習いです！！"
 				}
 			}
 
@@ -79,7 +86,9 @@ function push_Keydown(event){
 			Q_l = Q[Q_No].length;//計算用の文字の長さ
 
 			image.src = "../../static/image/" + Q[Q_No] + ".png"; //画像を出す
-			document.getElementById("start").innerHTML = Q[Q_No].substring(Q_i, Q_l); //新たな問題を書き出す
+
+			document.getElementById("text").innerHTML = Q_mondai[Q_No];//問題を出す
+			document.getElementById("start").innerHTML = Q[Q_No][Q_i]; //新たな問題を書き出す
 
 		}
 	}
@@ -99,13 +108,14 @@ function push_Keydown(event){
 <p><img src="" id="img" /></p>
 
 <br>
-<br>
 
-<p><textarea cols="50" rows="15"></textarea></p>
+<p><textarea cols="30" rows="5"></textarea></p>
 
-
-<h1 id="start" class="text">スペースを押して下さい</h1>
 <h1 id="result" class="text"></h1>
+
+<h1 id="text" class="text"></h1>
+
+<h1 id="start" class="text">↑をタップして、空白ボタンを押したらスタート！</h1>
 
 <form action="{% url 'index' %}" method="post">
 	{% csrf_token %}

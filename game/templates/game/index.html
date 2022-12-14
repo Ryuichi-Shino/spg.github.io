@@ -48,6 +48,7 @@
 
     <font size=4>
     <h3 class="a">文字サイズ変更</h3>
+    
     <button onclick="location.href='/smallindex'">小</button>
     <button disabled>中</button>
     <button onclick="location.href='/bigindex'">大</button>
@@ -58,10 +59,13 @@
             <!-- スライドさせる画像の設定 -->
             {% csrf_token %}
             <div class="carousel-inner">
-                <div class="carousel-item active">
+                <div class="carousel-item active" onclick="audio()">
                     <img src="{% static 'image/top.png' %}" alt="第1スライド" class="d-block w-100">
                 </div><!-- /.carousel-item -->
-                <div class="carousel-item">
+                <audio id="btn_audio">
+                    <source src="../../static/sound/sound.mp3" type="audio/mp3">
+                </audio>
+                <div class="carousel-item" onclick="audio()">
                     <img src="{% static 'image/sumaho.jpg' %}" alt="第2スライド" class="d-block w-100">
                 </div><!-- /.carousel-item -->
                 <div class="carousel-item">
@@ -94,7 +98,7 @@
         </form>
         <hr>
 
-        <h2 class="sample2">カメラを使ってみよう</h2>
+        <h2 class="sample2">マップを使ってみよう</h2>
         <form action="{% url 'move_to_gamepage3' %}" method="post">
             {% csrf_token %}
             <input type="image" src="{% static 'image/start_button.png' %}" name="start_button">
