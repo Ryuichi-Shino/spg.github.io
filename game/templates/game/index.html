@@ -41,6 +41,11 @@
         </div>
     </header>
 
+    <audio autoplay loop>
+        <source src="../../static/sound/BGM.mp3">
+        あなたのブラウザーは <code>audio</code> 要素をサポートしていません。
+    </audio>
+
     <font size=4>
     <h3 class="a">文字サイズ変更</h3>
     
@@ -54,10 +59,13 @@
             <!-- スライドさせる画像の設定 -->
             {% csrf_token %}
             <div class="carousel-inner">
-                <div class="carousel-item active">
+                <div class="carousel-item active" onclick="audio()">
                     <img src="{% static 'image/top.png' %}" alt="第1スライド" class="d-block w-100">
                 </div><!-- /.carousel-item -->
-                <div class="carousel-item">
+                <audio id="btn_audio">
+                    <source src="../../static/sound/sound.mp3" type="audio/mp3">
+                </audio>
+                <div class="carousel-item" onclick="audio()">
                     <img src="{% static 'image/sumaho.jpg' %}" alt="第2スライド" class="d-block w-100">
                 </div><!-- /.carousel-item -->
                 <div class="carousel-item">
