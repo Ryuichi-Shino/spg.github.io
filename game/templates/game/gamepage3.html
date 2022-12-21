@@ -5,37 +5,51 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="../../static/css/style.css">
-<title>Sample_GoogleMap</title>
+<link rel="stylesheet" type="text/css" href="../../static/css/game3.css">
+<title>ゲーム3</title>
 </head>
 
 <body>
-  <font size="4">
+  <header class="header">
+    <div class="header__inner">
+        <h1 class="header__title">
+            <form action="{% url 'index' %}" method="post">
+                {% csrf_token %}
+                <input type="image" src="../../static/image/logo.png" width="400px" height="200px">
+            </form>
+        </h1>
+
+        <div class="box">
+
+        </div>
+    </div>
+</header>
   <div style="text-align:center">
     <div class="map">
-    <h1>マップゲーム</h1>
-    <h2>ゲーム説明</h2>
-    <p>マップを試して見よう！！</p>
-    <p>*マップの使い方</p>
-
-    <button onclick="window.open('https://www.google.co.jp/maps/?hl=ja')">Google Map</button>
-
-    <br>
-    <br>
-
-    <input type="checkbox" name="os" value="win7">赤羽駅
-    <br>
-		<input type="checkbox" name="os" value="win8">INIAD
-		<br>
-    <input type="checkbox" name="os" value="win10">イトーヨーカドー
-		<br>
-    <input type="checkbox" name="os" value="mac">公園
-		<br>
-    <input type="checkbox" name="os" value="linux">ラーメン屋
+      <h1 class="title">マップゲーム</h1>
+      <h2 class="sb">マップを使ってみよう！！</h2>
+      <h2>ゲーム説明</h2>
+      <img src="../../static/image/game3-1.png" width="100%" class="img1" border="1">
+      <img src="../../static/image/game3-2.png" width="100%" class="img1" border="1">
+      <img src="../../static/image/game3-3.png" width="100%" class="img1" border="1">
+      <img src="../../static/image/game3-4.png" width="100%" class="img1" border="1">
+      <br>
+      <button onclick="window.open('https://www.google.co.jp/maps/?hl=ja')" class="btn">Google Map</button>
+      <br>
+      <div class="ck">
+        <input type="checkbox" name="os" value="win7">赤羽駅
+        <br>
+        <input type="checkbox" name="os" value="win8">INIAD
+        <br>
+        <input type="checkbox" name="os" value="win10">イトーヨーカドー
+        <br>
+        <input type="checkbox" name="os" value="mac">公園
+        <br>
+        <input type="checkbox" name="os" value="linux">ラーメン屋
+      </div>
     </div>
   </div>
-  </font>
+  <footer class="footer">
+  </footer>
 </body>
-
 </html>
-
-aaa

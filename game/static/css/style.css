@@ -57,18 +57,16 @@ body {
 
 /* ヘッダーのロゴ部分 */
 .header__title {
-  width: 100px;
+  width: 100%;
 }
-
 
 .header__title img {
   display: block;
   text-align: center;
-  width: 60%;
+  width: 50%;
   height: 40%;
   margin: auto;
 }
-
 
 /* フッター */
 .footer {
@@ -89,14 +87,4 @@ p{
 .up{
   position: absolute;
 }
-
-.map h1 {
-  font-size: 10000px;
-  color: aqua;
-}
-
-h1 {
-  color: aqua;
-}
-
 

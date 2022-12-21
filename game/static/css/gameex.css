@@ -1,5 +1,22 @@
 body {
-    background-color: rgb(231, 218, 32);
-    font-family:sans-serif
-  }
+  background-color: rgb(255, 255, 255);
+  font-family:sans-serif
+}
   
+.footer {
+  width: 100%;
+  height: 60px;
+  background-color: rgb(255, 0, 0);
+}
+
+h1 {
+  color: #364e96;/*文字色*/
+  padding: 0.5em 0;/*上下の余白*/
+  border-top: solid 3px #364e96;/*上線*/
+  border-bottom: solid 3px #364e96;/*下線*/
+  font-size: 900%;
+}
+
+h2 {
+  font-size: 500%;
+}

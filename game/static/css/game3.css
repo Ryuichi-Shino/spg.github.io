@@ -1,0 +1,42 @@
+body {
+    background-color: rgb(255, 255, 255);
+    font-family:sans-serif
+}
+
+.footer {
+    width: 100%;
+    height: 60px;
+    background-color: rgb(255, 0, 0);
+}
+
+.title {
+    color: #364e96;/*文字色*/
+    padding: 0.5em 0;/*上下の余白*/
+    border-top: solid 3px #364e96;/*上線*/
+    border-bottom: solid 3px #364e96;/*下線*/
+    font-size: 900%;
+}
+
+.sb {
+    color: rgb(74, 158, 18);
+}
+
+h2 {
+    font-size: 500%;
+}
+
+.ck {
+    text-align: left;
+	display: inline-block;
+    font-size: 500%;
+}
+
+.btn {
+    width: 70%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #68779a;
+    background: #cbe8fa;
+    cursor: pointer;
+    font-size: 500%;
+}

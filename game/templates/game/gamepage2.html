@@ -44,7 +44,7 @@ function push_Keydown(event){
 	let image = document.getElementById("image");
 	let keyCode = event.key;
 
-	if(keyCode == " "){//時間測定開始
+	if(keyCode == "　"){//時間測定開始
 		start();
 	}
 
@@ -97,17 +97,26 @@ function push_Keydown(event){
 </script>
 
 <body>
+	<header class="header">
+        <div class="header__inner">
+            <h1 class="header__title">
+                <form action="{% url 'index' %}" method="post">
+                    {% csrf_token %}
+                    <input type="image" src="../../static/image/logo.png" width="400px" height="200px">
+                </form>
+            </h1>
 
-	<audio autoplay loop>
+            <div class="box">
+
+            </div>
+        </div>
+    </header>
+<center>
+<audio autoplay controls loop>
         <source src="../../static/sound/BGM2.mp3">
         あなたのブラウザーは <code>audio</code> 要素をサポートしていません。
     </audio>
-
-<center>
-
-<p><img src="../../static/image/key.png" id="image" width="70%"/></p>
-
-<br>
+<p><img src="../../static/image/game2-1.png" id="image" width="70%"/></p>
 
 <p><textarea cols="30" rows="5"></textarea></p>
 
@@ -124,6 +133,8 @@ function push_Keydown(event){
 
 
 </center>
+<footer class="footer">
+</footer>
 
 </body>
 </html>
