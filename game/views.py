@@ -178,3 +178,6 @@ def move_to_result(request):
             score.increment()
     context = { 'score':score }
     return render(request, "game/quiz_result.html", context)
+
+def move_to_g3result(request):
+	return render(request, 'game/g3result.html')

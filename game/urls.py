@@ -22,5 +22,6 @@ urlpatterns = [
     path('templates/quiz9', views.move_to_quiz9, name='move_to_quiz9'),
     path('templates/quiz10', views.move_to_quiz10, name='move_to_quiz10'),
     path('templates/result', views.move_to_result, name='move_to_result'),
+    path('templates/g3result', views.move_to_g3result, name='move_to_g3result'),
 ]
 

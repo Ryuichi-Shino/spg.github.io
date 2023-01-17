@@ -11,9 +11,9 @@
 <script>
 
 	let Q_mondai = ["とうきょうたわー","おりんぴっく","まくどなるど","しゃんしゃん","きんぱちせんせい"]
-	let Q = ["とうきよ゛うたわー","おりんぴつ゛く","まくどなるど","しや゛んしや゛ん","きんぱちせんせい"] //判定用
+	let Q = ["とうきよ゛うたわー","おりんひ゛゛つ゛く","まくと゛なると゛","しや゛んしや゛ん","きんは゛゛ちせんせい"] //判定用
 
-	let Q_length = 2;
+	let Q_length = 5;
 	let Q_No = 0;
 
 	let Q_i = 0;//回答初期値・現在単語どこまで合っているか判定している文字番号
@@ -50,7 +50,7 @@ function push_Keydown(event){
 
 	if (Q_l == Q_l-Q_i){ 
 		
-		image.src = "../../static/image/" + Q[Q_No] + ".png"; //画像を出す
+		image.src = "../../static/image/" + Q_mondai[Q_No] + ".png"; //画像を出す
 
 		document.getElementById("text").innerHTML = Q_mondai[Q_No];//問題を出す
 		document.getElementById("start").innerHTML = Q[Q_No][Q_i]; //判定文字を出す
@@ -71,7 +71,7 @@ function push_Keydown(event){
 			if (Q_No == Q_length){ //問題が全て終わったら
 				stop();//時間を止める
 				image.src = "../../static/image/happy.png";
-				if	(holdTime.toString(10) < "10"){
+				if	(holdTime.toString(10) < "15"){
 					document.getElementById("result").innerHTML = "あなたのタイムは " + holdTime.toString(10) +" 秒";
 					document.getElementById("text").innerHTML = "";
 					document.getElementById("start").innerHTML = "あなたはフリック入力マスターです！！"
@@ -85,7 +85,7 @@ function push_Keydown(event){
 			Q_i = 0;//回答初期値・現在どこまで合っているか判定している文字番号
 			Q_l = Q[Q_No].length;//計算用の文字の長さ
 
-			image.src = "../../static/image/" + Q[Q_No] + ".png"; //画像を出す
+			image.src = "../../static/image/" + Q_mondai[Q_No] + ".png"; //画像を出す
 
 			document.getElementById("text").innerHTML = Q_mondai[Q_No];//問題を出す
 			document.getElementById("start").innerHTML = Q[Q_No][Q_i]; //新たな問題を書き出す

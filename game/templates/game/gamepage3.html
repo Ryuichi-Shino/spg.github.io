@@ -33,20 +33,25 @@
       <img src="../../static/image/game3-2.png" width="100%" class="img1" border="1">
       <img src="../../static/image/game3-3.png" width="100%" class="img1" border="1">
       <img src="../../static/image/game3-4.png" width="100%" class="img1" border="1">
-      <br>
-      <button onclick="window.open('https://www.google.co.jp/maps/?hl=ja')" class="btn">Google Map</button>
-      <br>
+      <p>&nbsp;</p>
+      <button onclick="location.href='https://www.google.co.jp/maps/?hl=ja'" class="btn">Google Map</button>
+      <p>&nbsp;</p>
       <div class="ck">
-        <input type="checkbox" name="os" value="win7">赤羽駅
+        <input type="checkbox" name="a" id="ck1" style="transform:scale(5.0);"> 赤羽駅
         <br>
-        <input type="checkbox" name="os" value="win8">INIAD
+        <input type="checkbox" name="a" id="ck2" style="transform:scale(5.0);"> INIAD
         <br>
-        <input type="checkbox" name="os" value="win10">イトーヨーカドー
+        <input type="checkbox" name="a" id="ck3" style="transform:scale(5.0);"> イトーヨーカドー
         <br>
-        <input type="checkbox" name="os" value="mac">公園
+        <input type="checkbox" name="a" id="ck4" style="transform:scale(5.0);"> 公園
         <br>
-        <input type="checkbox" name="os" value="linux">ラーメン屋
+        <input type="checkbox" name="a" id="ck5" style="transform:scale(5.0);"> ラーメン屋
       </div>
+      <p>&nbsp;</p>
+      <form action="{% url 'move_to_g3result' %}" method="post">
+        {% csrf_token %}
+        <input type="image" src="{% static 'image/next1.png' %}" name="start_button" width="70%">
+      </form>
     </div>
   </div>
   <footer class="footer">
