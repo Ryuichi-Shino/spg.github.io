@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [
+INSTALLED_APPSWARE = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,6 +43,13 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -132,3 +139,29 @@ ALLOWED_HOSTS = ["192.168.0.15", "192.168.0.7", "192.168.0.8", "localhost", "172
 #172.16.245.174 iniad wifi
 import sys
 sys.dont_write_bytecode = True
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = False
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+ os.path.join(BASE_DIR, 'static'),
+)
+
+#Heroku database
+import dj_database_url
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
+db_from_env = dj_database_url.config(conn_max_age=600,
+ssl_require=True)
+DATABASES['default'].update(db_from_env)
+try:
+ from .local_settings import *
+except ImportError:
+ pass
+if not DEBUG:
+ SECRET_KEY = '***************************************' #削除したSECRET_KEYをコピペします
+
+import django_heroku
+django_heroku.settings(locals())
